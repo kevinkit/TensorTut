@@ -3,7 +3,12 @@ This tutorial will try to give a tutorial for beginnerst with the TensorflowFram
 
 
 # Lesson 0
-How to setup an IDE and install Tensorflow
+
+-- Set up Python IDE
+-- Set up CUDA
+-- Set up cuDNN
+-- Set up Tensorflow
+-- Test Tensorflow
 
 # Lesson 1 - Machine Learning Basics
 
