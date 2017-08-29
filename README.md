@@ -12,9 +12,10 @@ This tutorial will try to give a tutorial for beginnerst with the TensorflowFram
 
 # Lesson 1 - Machine Learning Basics
 
-What's behind Machine Learning?
+- What's behind Machine Learning?
 
 
 # Lesson 2 - TensorFlow Basics
 
-What's so special about Tensorflow?
+- Characteristics of Tensorflow
+- Simple Example
