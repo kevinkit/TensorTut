@@ -19,3 +19,9 @@ This tutorial will try to give a tutorial for beginnerst with the TensorflowFram
 
 - Characteristics of Tensorflow
 - Simple Example
+
+
+# Lesson 3 - Tensorboard
+
+- How to write to log file
+- How to start Tensorboard
