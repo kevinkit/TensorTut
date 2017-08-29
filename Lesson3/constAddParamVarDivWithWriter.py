@@ -41,4 +41,6 @@ with tf.device('/gpu:0'): #with tf.device('/cpu:0'):
         session.run(init)
         print(session.run(nd,{x:7.0}))
         
+    wr.close()
+        
         

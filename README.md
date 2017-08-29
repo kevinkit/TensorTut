@@ -25,3 +25,8 @@ This tutorial will try to give a tutorial for beginnerst with the TensorflowFram
 
 - How to write to log file
 - How to start Tensorboard
+
+# Lesson 4 - Linear machine learning
+
+- Tensorflow, what are Tensors?
+- Linear Machine learning example
