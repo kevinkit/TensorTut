@@ -30,3 +30,12 @@ This tutorial will try to give a tutorial for beginnerst with the TensorflowFram
 
 - Tensorflow, what are Tensors?
 - Linear Machine learning example
+
+# Lesson 5 - Using predifined linear regression
+
+- Does not work due to deprecation
+
+# Lesson 6 
+
+- MNIST Download
+
