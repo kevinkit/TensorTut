@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import xlrd
 
-
+from tensorflow.contrib.learn.python import SKCompat
 
 FILE = 'prices.xls'
 
@@ -33,15 +33,35 @@ with tf.device('/gpu:0'): #with tf.device('/cpu:0'):
     
     features = [tf.contrib.layers.real_valued_column("x1",dimension=1),\
                 tf.contrib.layers.real_valued_column("x2",dimension=1)]
-    estimator = tf.contrib.learn.LinearRegressor(feature_columns=features,model_dir='./linear_estimator_2')
-    input_fn_train = tf.contrib.learn.io.numpy_input_fn({"x1":x1_d,"x2":x2_d},y_d,num_epochs=1000)
-    
-    estimator.fit(input_fn=input_fn_train)
-    
-    estimator.evaluate(input_fn=input_fn_train)
-    
-    estimator.predict(x={'x1': 150, 'x2': 1})
 
+
+    cl = SKCompat( tf.contrib.learn.LinearRegressor(feature_columns=features,model_dir='./linear_estimator_2'))
+    
+    input_fn_train = tf.contrib.learn.io.numpy_input_fn({"x1":x1_d,"x2":x2_d},y_d,num_epochs=1000)
+    input_fn_train = tf.contrib.learn.io.numpy_input_fn({"x1":x1_d,"x2":x2_d},num_epochs=1000)
+   
+    
+    
+    x1_t = tf.convert_to_tensor(x1_d)
+    x2_t = tf.convert_to_tensor(x2_d)
+    
+    y_t = tf.convert_to_tensor(y_d)
+    
+    cl.fit(x={"x1":x1_t,"x2":x2_t},y=y_t)
+    
+    
+    
+    cl.evaluate(x=x1_d,y=y_d)
+    #cl.evaluate(input_fn=input_fn_train)
+    cl.predict(x=100)
+    
+    #estimator.fit(input_fn=input_fn_train)
+    
+    #estimator.evaluate(input_fn=input_fn_train)
+    
+    #estimator.predict(x={'x1': 150, 'x2': 1})
+
+    #estimator = tf.contrib.learn.LinearRegressor(feature_columns=features,model_dir='./linear_estimator_2')
 #
 ##Define the model - since there should be a linear dependency, one layer
 ##should be enough
