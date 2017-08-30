@@ -22,7 +22,6 @@ def debugData(part,idx=10):
     #Look at an example image
     x = part.images[idx]
     x = x.reshape([28,28])
-
     y = part.labels[idx]
 
     return x,y
